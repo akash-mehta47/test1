@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splashbackground">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="Scan Mice"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:titleTextColor="#21BFD3"
+        android:background="@color/surface"
+        android:elevation="4dp" />
+
+    <!-- Main Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- User Info -->
+            <TextView
+                android:id="@+id/tvUserInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scanning as: User (Faculty)"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:layout_marginBottom="30dp"
+                android:gravity="center" />
+
+            <!-- Scanner View -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/surface">
+
+                    <!-- Scanner Placeholder -->
+                    <View
+                        android:id="@+id/scannerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/primary_light"
+                        android:visibility="visible" />
+
+                    <!-- Scanner Frame -->
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/ic_scanner_frame"
+                        android:layout_centerInParent="true"
+                         />
+
+                    <!-- Permission Hint -->
+                    <TextView
+                        android:id="@+id/tvPermissionHint"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Camera permission required\n\nTap to grant permission"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:padding="20dp"
+                        android:visibility="gone"
+                        android:clickable="true" />
+
+                    <!-- Scan Success Icon -->
+                    <ImageView
+                        android:id="@+id/ivScanSuccess"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_check_circle"
+
+                        android:layout_centerInParent="true"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Scan Instructions -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How to scan:"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Point camera at the QR code on the mouse\n• Ensure good lighting\n• Hold steady until scan completes"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:layout_marginBottom="30dp" />
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStartScan"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:text="Start Scan"
+                    android:textSize="16sp"
+                    app:icon="@drawable/ic_scanning"
+                    app:iconGravity="textStart"
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="@color/primary"
+                    android:layout_marginEnd="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnManualEntry"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:text="Manual Entry"
+                    android:textSize="16sp"
+                    app:icon="@drawable/ic_keyboard"
+                    app:iconGravity="textStart"
+                    app:cornerRadius="12dp"
+                    app:backgroundTint="@color/surface"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="1dp"
+                    android:textColor="@color/primary"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+            <!-- Flashlight Toggle -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFlashlight"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Toggle Flashlight"
+                android:textSize="14sp"
+                app:icon="@drawable/ic_flashlight"
+                app:iconGravity="textStart"
+                app:cornerRadius="10dp"
+                app:backgroundTint="@color/surface"
+                app:strokeColor="@color/text_primary"
+                app:strokeWidth="1dp"
+                android:textColor="@color/text_secondary" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Quick Scan FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabQuickScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/ic_scanning"
+        app:backgroundTint="@color/primary"
+        app:tint="@color/white"
+        app:elevation="8dp" />
+
+</RelativeLayout>

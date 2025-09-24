@@ -1,0 +1,60 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Outer Square -->
+    <path
+        android:strokeColor="@color/primary"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M10,10 L110,10 L110,110 L10,110 Z"/>
+
+    <!-- Corner Squares -->
+    <!-- Top Left -->
+    <path
+        android:strokeColor="@color/accent"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:pathData="M20,20 L20,40 L40,40 L40,20 Z"/>
+
+    <!-- Top Right -->
+    <path
+        android:strokeColor="@color/accent"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:pathData="M100,20 L80,20 L80,40 L100,40 Z"/>
+
+    <!-- Bottom Left -->
+    <path
+        android:strokeColor="@color/accent"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:pathData="M20,100 L20,80 L40,80 L40,100 Z"/>
+
+    <!-- Scanning Line -->
+    <path
+        android:strokeColor="@color/success"
+        android:strokeWidth="2"
+        android:pathData="M30,60 L90,60">
+        <aapt:attr name="android:pathData">
+            <path
+                android:pathData="M30,60 L90,60">
+                <animated-vector>
+                    <target android:name="scanLine">
+                        <aapt:attr name="android:animation">
+                            <objectAnimator
+                                android:duration="1500"
+                                android:interpolator="@android:interpolator/accelerate_decelerate"
+                                android:propertyName="trimPathEnd"
+                                android:repeatCount="infinite"
+                                android:valueFrom="0"
+                                android:valueTo="1"/>
+                        </aapt:attr>
+                    </target>
+                </animated-vector>
+            </path>
+        </aapt:attr>
+    </path>
+</vector>

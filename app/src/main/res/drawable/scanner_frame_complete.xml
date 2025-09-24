@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Outer Border -->
+    <item>
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="2dp"
+                android:color="@color/primary_light" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+
+    <!-- Inner Border -->
+    <item android:top="4dp" android:bottom="4dp" android:left="4dp" android:right="4dp">
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="3dp"
+                android:color="@color/primary" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Corner Indicators -->
+    <item>
+        <rotate android:fromDegrees="0">
+            <shape android:shape="rectangle">
+                <size android:width="20dp" android:height="20dp"/>
+                <stroke
+                    android:width="3dp"
+                    android:color="@color/accent" />
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

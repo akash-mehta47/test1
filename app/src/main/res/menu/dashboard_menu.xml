@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Search Menu Item -->
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search"
+        android:title="Search"
+        app:showAsAction="ifRoom"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <!-- Notifications Menu Item -->
+    <item
+        android:id="@+id/action_notifications"
+        android:icon="@drawable/ic_notifications"
+        android:title="Notifications"
+        app:showAsAction="ifRoom" />
+
+    <!-- More Options Menu -->
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/ic_more_vert"
+        android:title="More"
+        app:showAsAction="never" />
+
+    <!-- Refresh Menu Item -->
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/ic_refresh"
+        android:title="Refresh"
+        app:showAsAction="never" />
+
+    <!-- Settings Menu Item -->
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_setting"
+        android:title="Settings"
+        app:showAsAction="never" />
+
+    <!-- Help Menu Item -->
+    <item
+        android:id="@+id/action_help"
+        android:icon="@drawable/ic_help"
+        android:title="Help"
+        app:showAsAction="never" />
+
+    <!-- Logout Menu Item -->
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout"
+        app:showAsAction="never" />
+
+</menu>
