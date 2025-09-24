@@ -172,7 +172,8 @@ public class Mice {
     public String getFullDetails() {
         return getTitle() + " (" + getMiceId() + ") - " + getStatus();
     }
-
     public String getMouseId() {
+        return miceId != null ? "MOUSE-" + miceId : "MOUSE-Unknown";
     }
+
 }

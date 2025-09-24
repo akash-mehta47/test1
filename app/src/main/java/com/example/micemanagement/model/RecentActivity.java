@@ -123,7 +123,8 @@ public class RecentActivity {
         }
         return getDescription();
     }
-
     public String getMouseId() {
+        return miceId != null ? "MOUSE-" + miceId : "MOUSE-Unknown";
     }
+
 }
